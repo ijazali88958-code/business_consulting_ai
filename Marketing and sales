@@ -1,0 +1,19 @@
+
+from crewai import Agent
+
+
+def create_agent(llm):
+    return Agent(
+        role="Marketing and Sales Consultant",
+        goal=(
+            "Create a customer acquisition, marketing, sales, "
+            "pricing communication, and retention plan."
+        ),
+        backstory=(
+            "You specialize in practical marketing strategies "
+            "tailored to the target audience and available budget."
+        ),
+        llm=llm,
+        verbose=False,
+        allow_delegation=False,
+    )

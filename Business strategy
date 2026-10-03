@@ -1,0 +1,19 @@
+
+from crewai import Agent
+
+
+def create_agent(llm):
+    return Agent(
+        role="Business Strategy Consultant",
+        goal=(
+            "Create a practical business model, value proposition, "
+            "competitive positioning, and growth strategy."
+        ),
+        backstory=(
+            "You help businesses turn goals into achievable "
+            "strategies using market evidence and clear assumptions."
+        ),
+        llm=llm,
+        verbose=False,
+        allow_delegation=False,
+    )

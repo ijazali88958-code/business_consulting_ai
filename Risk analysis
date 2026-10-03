@@ -1,0 +1,20 @@
+
+from crewai import Agent
+
+
+def create_agent(llm):
+    return Agent(
+        role="Business Risk Consultant",
+        goal=(
+            "Identify business risks, their likely impacts, "
+            "warning indicators, and practical mitigation steps."
+        ),
+        backstory=(
+            "You examine market, financial, operational, "
+            "cybersecurity, competitive, and relevant regulatory "
+            "risks without presenting guesses as verified facts."
+        ),
+        llm=llm,
+        verbose=False,
+        allow_delegation=False,
+    )

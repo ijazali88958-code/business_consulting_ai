@@ -1,0 +1,20 @@
+
+from crewai import Agent
+
+
+def create_agent(llm):
+    return Agent(
+        role="Financial Planning Consultant",
+        goal=(
+            "Analyze startup costs, expenses, revenue, cash flow, "
+            "pricing, and break-even assumptions."
+        ),
+        backstory=(
+            "You are a careful financial planning consultant. "
+            "You clearly label estimates, avoid invented records, "
+            "and never guarantee profitability."
+        ),
+        llm=llm,
+        verbose=False,
+        allow_delegation=False,
+    )
